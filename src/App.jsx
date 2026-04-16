@@ -7,8 +7,7 @@ function App() {
   const [cardData, setCardData] = useState([]);
 
   
-  const apiAddress = "https://pokeapi.co/api/v2/pokemon/"
-  const apiImgPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+  const apiAddress = "https://pokeapi.co/api/v2/pokemon?limit=10"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +27,7 @@ function App() {
     <Header />
     <section className='card-grid'>
         {cardData.map((card, index) => (
-          <div className='card'>
+          <div className='card' key={card.name}>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt={card.name} />
             <p>{card.name}</p>
           </div>
