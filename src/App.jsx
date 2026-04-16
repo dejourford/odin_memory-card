@@ -24,6 +24,11 @@ function App() {
 
   // handle card click
   const handleCardClick = (name) => {
+    if (collection.length === cardData.length) {
+      alert("You have won the game!")
+      return
+    }
+    
     if (collection.some((item) => item === name)) {
       console.log("return please");
       if (score > bestScore) {
