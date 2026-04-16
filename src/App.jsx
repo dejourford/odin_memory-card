@@ -15,14 +15,11 @@ function App() {
     const fetchData = async () => {
       const response = await fetch(apiAddress)
       const data = await response.json();
-      console.log('reults:', data.results)
       setCardData(data.results);
     }
 
     fetchData();
   }, []);
-
-  console.log("cardData:", cardData.results)
 
   return (
     <>
