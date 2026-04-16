@@ -5,6 +5,8 @@ import { Card } from './components/Card'
 
 function App() {
   const [cardData, setCardData] = useState([]);
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   
   const apiAddress = "https://pokeapi.co/api/v2/pokemon?limit=10"
@@ -24,7 +26,7 @@ function App() {
 
   return (
     <>
-    <Header />
+    <Header score={score} bestScore={bestScore} />
     <section className='card-grid'>
         {cardData.map((card, index) => (
           <div className='card' key={card.name}>
